@@ -66,13 +66,13 @@ let bio: hasUsername | hasEmail = Math.random() > 0.2 ?
     name: 'Fulana bin fulan',
     email: 'fulana@test.com'
   };
-  console.log(bio.name) // can only acces the name property
+console.log(bio.name) // can only acces the name property
 
-  // union types
-  let bio2: hasUsername & hasEmail =  {
-    name: 'Fulana bin fulan',
-    username: 'fulana',
-    email: 'fulana@test.com'
-  }
-  // we can acess anything
-  console.log(bio2.name, bio2.username, bio2.email)
+// union types
+let bio2: hasUsername & hasEmail =  {
+  name: 'Fulana bin fulan',
+  username: 'fulana',
+  email: 'fulana@test.com'
+}
+// we can acess anything
+console.log(bio2.name, bio2.username, bio2.email)
