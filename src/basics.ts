@@ -33,8 +33,8 @@ let biodata: { name: string; age: number} = {
 */
 console.log(biodata);
 
-// optional operator
-let biodata2: { name: string; age?: number} = {
+// optional operator 
+let biodata2: { name: string; age?: number} = { // age is optional
   name: 'Fulana'
 }
 
@@ -47,12 +47,12 @@ interface IBiodata {
 let biodata3: IBiodata = { name: 'fulan', age: 23 };
 
 // Union & Intersection
-interface hasUsername {
+export interface hasUsername {
   name: string
   username: string
 }
 
-interface hasEmail {
+export interface hasEmail {
   name: string
   email: string
 }
