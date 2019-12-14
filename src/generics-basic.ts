@@ -30,3 +30,27 @@ function promiseFunction<T>(promise: Promise<T>, val: number): Promise<T> {
   });
 }
 promiseFunction(fetch(""), 2000);
+
+// Generics type parameters constraints
+function arrayObj<T extends { id: string }>(arr: T[]): { [k: string]: T } {
+  const temp: { [k: string]: T } = {};
+  arr.forEach(data => {
+    temp[data.id] = data;
+  });
+  return temp;
+}
+const myArrObj = arrayObj([
+  { id: 'abc', name: 'arum', age: 21 },
+  { id: 'def', name: 'zia', age: 40 }
+]);
+console.log(myArrObj);
+
+// type parameters scope, just like regular function
+function firstLevel<A>(first: A) {
+  // second cannot acces here
+  return function secondLevel<B>(second: B) {
+    // first can access here
+    return [first, second] as [A, B];
+  }
+}
+console.log(firstLevel("test")(20));
