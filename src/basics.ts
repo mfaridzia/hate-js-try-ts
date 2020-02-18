@@ -57,7 +57,7 @@ export interface hasEmail {
   email: string
 }
 
-// union types
+// Union types
 let bio: hasUsername | hasEmail = Math.random() > 0.2 ?
   {
     name: 'Fulana bin fulan',
@@ -68,7 +68,7 @@ let bio: hasUsername | hasEmail = Math.random() > 0.2 ?
   };
 console.log(bio.name) // can only acces the name property
 
-// intersection types
+// Intersection types
 let bio2: hasUsername & hasEmail =  {
   name: 'Fulana bin fulan',
   username: 'fulana',
